@@ -1,0 +1,426 @@
+{
+  "IS_SUPPORTED": true,
+  "SUPPORTED_SIGNALS": [
+    "Hangup",
+    "Interrupt",
+    "Quit",
+    "Illegal",
+    "Trap",
+    "Abort",
+    "IOT",
+    "Bus",
+    "FloatingPointException",
+    "Kill",
+    "User1",
+    "Segv",
+    "User2",
+    "Pipe",
+    "Alarm",
+    "Term",
+    "Child",
+    "Continue",
+    "Stop",
+    "TSTP",
+    "TTIN",
+    "TTOU",
+    "Urgent",
+    "XCPU",
+    "XFSZ",
+    "VirtualAlarm",
+    "Profiling",
+    "Winch",
+    "IO",
+    "Poll",
+    "Power",
+    "Sys"
+  ],
+  "MINIMUM_CPU_UPDATE_INTERVAL": { "secs": 0, "nanos": 200000000 },
+  "global_cpu_info": {
+    "cpu_usage": 15.976331,
+    "name": "cpu",
+    "vendor_id": "AuthenticAMD",
+    "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "frequency": 4141
+  },
+  "cpus": [
+    {
+      "cpu_usage": 20.0,
+      "name": "cpu0",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3312
+    },
+    {
+      "cpu_usage": 14.285715,
+      "name": "cpu1",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3306
+    },
+    {
+      "cpu_usage": 14.285715,
+      "name": "cpu2",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 4136
+    },
+    {
+      "cpu_usage": 11.111112,
+      "name": "cpu3",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 4141
+    },
+    {
+      "cpu_usage": 11.111112,
+      "name": "cpu4",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3527
+    },
+    {
+      "cpu_usage": 13.793103,
+      "name": "cpu5",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3397
+    },
+    {
+      "cpu_usage": 11.111112,
+      "name": "cpu6",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3311
+    },
+    {
+      "cpu_usage": 14.285715,
+      "name": "cpu7",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3327
+    },
+    {
+      "cpu_usage": 17.241379,
+      "name": "cpu8",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3374
+    },
+    {
+      "cpu_usage": 17.857143,
+      "name": "cpu9",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3332
+    },
+    {
+      "cpu_usage": 20.0,
+      "name": "cpu10",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 4141
+    },
+    {
+      "cpu_usage": 25.925926,
+      "name": "cpu11",
+      "vendor_id": "AuthenticAMD",
+      "brand": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "frequency": 3839
+    }
+  ],
+  "physical_core_count": 6,
+  "total_memory": 16066301952,
+  "free_memory": 443596800,
+  "available_memory": 1802817536,
+  "used_memory": 14263484416,
+  "total_swap": 0,
+  "free_swap": 0,
+  "used_swap": 0,
+  "components": [
+    {
+      "temperature": 76.0,
+      "max": 76.0,
+      "critical": 117.0,
+      "label": "acpitz temp1"
+    },
+    {
+      "temperature": 30.0,
+      "max": 30.0,
+      "critical": 126.0,
+      "label": "acpitz temp2"
+    },
+    {
+      "temperature": 52.0,
+      "max": 53.0,
+      "critical": null,
+      "label": "amdgpu edge"
+    },
+    {
+      "temperature": 79.5,
+      "max": 79.75,
+      "critical": null,
+      "label": "k10temp Tctl"
+    },
+    {
+      "temperature": 41.85,
+      "max": 41.85,
+      "critical": 84.85,
+      "label": "nvme Composite SAMSUNG MZVLQ512HBLU-00B00 temp1"
+    },
+    {
+      "temperature": 41.85,
+      "max": 41.85,
+      "critical": null,
+      "label": "nvme Sensor 1 SAMSUNG MZVLQ512HBLU-00B00 temp2"
+    }
+  ],
+  "users": [
+    { "id": "0", "group_id": 0, "name": "root", "groups": ["root"] },
+    { "id": "1", "group_id": 1, "name": "daemon", "groups": ["daemon"] },
+    { "id": "2", "group_id": 2, "name": "bin", "groups": ["bin"] },
+    { "id": "3", "group_id": 3, "name": "sys", "groups": ["sys"] },
+    { "id": "4", "group_id": 65534, "name": "sync", "groups": ["nogroup"] },
+    { "id": "5", "group_id": 60, "name": "games", "groups": ["games"] },
+    { "id": "6", "group_id": 12, "name": "man", "groups": ["man"] },
+    { "id": "7", "group_id": 7, "name": "lp", "groups": ["lp"] },
+    { "id": "8", "group_id": 8, "name": "mail", "groups": ["mail"] },
+    { "id": "9", "group_id": 9, "name": "news", "groups": ["news"] },
+    { "id": "10", "group_id": 10, "name": "uucp", "groups": ["uucp"] },
+    { "id": "13", "group_id": 13, "name": "proxy", "groups": ["proxy"] },
+    { "id": "33", "group_id": 33, "name": "www-data", "groups": ["www-data"] },
+    { "id": "34", "group_id": 34, "name": "backup", "groups": ["backup"] },
+    { "id": "38", "group_id": 38, "name": "list", "groups": ["list"] },
+    { "id": "39", "group_id": 39, "name": "irc", "groups": ["irc"] },
+    { "id": "42", "group_id": 65534, "name": "_apt", "groups": ["nogroup"] },
+    {
+      "id": "65534",
+      "group_id": 65534,
+      "name": "nobody",
+      "groups": ["nogroup"]
+    },
+    {
+      "id": "998",
+      "group_id": 998,
+      "name": "systemd-network",
+      "groups": ["systemd-network"]
+    },
+    {
+      "id": "997",
+      "group_id": 997,
+      "name": "systemd-timesync",
+      "groups": ["systemd-timesync"]
+    },
+    {
+      "id": "100",
+      "group_id": 106,
+      "name": "messagebus",
+      "groups": ["messagebus"]
+    },
+    {
+      "id": "101",
+      "group_id": 107,
+      "name": "syslog",
+      "groups": ["syslog", "adm"]
+    },
+    {
+      "id": "996",
+      "group_id": 996,
+      "name": "systemd-resolve",
+      "groups": ["systemd-resolve"]
+    },
+    { "id": "102", "group_id": 108, "name": "uuidd", "groups": ["uuidd"] },
+    { "id": "103", "group_id": 110, "name": "tss", "groups": ["tss"] },
+    {
+      "id": "995",
+      "group_id": 995,
+      "name": "systemd-oom",
+      "groups": ["systemd-oom"]
+    },
+    { "id": "104", "group_id": 113, "name": "tcpdump", "groups": ["tcpdump"] },
+    {
+      "id": "105",
+      "group_id": 114,
+      "name": "avahi-autoipd",
+      "groups": ["avahi-autoipd"]
+    },
+    { "id": "106", "group_id": 46, "name": "usbmux", "groups": ["plugdev"] },
+    {
+      "id": "107",
+      "group_id": 65534,
+      "name": "kernoops",
+      "groups": ["nogroup"]
+    },
+    {
+      "id": "108",
+      "group_id": 115,
+      "name": "whoopsie",
+      "groups": ["whoopsie"]
+    },
+    {
+      "id": "109",
+      "group_id": 65534,
+      "name": "dnsmasq",
+      "groups": ["nogroup"]
+    },
+    { "id": "110", "group_id": 116, "name": "avahi", "groups": ["avahi"] },
+    {
+      "id": "111",
+      "group_id": 118,
+      "name": "cups-pk-helper",
+      "groups": ["lpadmin"]
+    },
+    { "id": "112", "group_id": 119, "name": "rtkit", "groups": ["rtkit"] },
+    { "id": "113", "group_id": 120, "name": "sssd", "groups": ["sssd"] },
+    {
+      "id": "114",
+      "group_id": 29,
+      "name": "speech-dispatcher",
+      "groups": ["audio"]
+    },
+    {
+      "id": "115",
+      "group_id": 122,
+      "name": "fwupd-refresh",
+      "groups": ["fwupd-refresh"]
+    },
+    {
+      "id": "116",
+      "group_id": 123,
+      "name": "nm-openvpn",
+      "groups": ["nm-openvpn"]
+    },
+    {
+      "id": "117",
+      "group_id": 125,
+      "name": "saned",
+      "groups": ["saned", "scanner"]
+    },
+    { "id": "118", "group_id": 126, "name": "colord", "groups": ["colord"] },
+    { "id": "119", "group_id": 127, "name": "geoclue", "groups": ["geoclue"] },
+    { "id": "120", "group_id": 128, "name": "gdm", "groups": ["gdm"] },
+    {
+      "id": "121",
+      "group_id": 118,
+      "name": "cups-browsed",
+      "groups": ["lpadmin"]
+    },
+    {
+      "id": "122",
+      "group_id": 65534,
+      "name": "gnome-initial-setup",
+      "groups": ["nogroup"]
+    },
+    { "id": "123", "group_id": 7, "name": "hplip", "groups": ["lp"] },
+    {
+      "id": "1000",
+      "group_id": 1000,
+      "name": "rainbow",
+      "groups": [
+        "rainbow",
+        "adm",
+        "cdrom",
+        "sudo",
+        "dip",
+        "plugdev",
+        "users",
+        "lpadmin",
+        "kismet"
+      ]
+    },
+    { "id": "124", "group_id": 65534, "name": "sshd", "groups": ["nogroup"] },
+    {
+      "id": "125",
+      "group_id": 131,
+      "name": "postgres",
+      "groups": ["postgres", "ssl-cert"]
+    },
+    { "id": "126", "group_id": 132, "name": "redis", "groups": ["redis"] },
+    { "id": "127", "group_id": 134, "name": "sddm", "groups": ["sddm"] },
+    { "id": "128", "group_id": 135, "name": "_flatpak", "groups": ["_flatpak"] }
+  ],
+  "disks": [
+    {
+      "DiskKind": "SSD",
+      "name": "/dev/nvme0n1p6",
+      "file_system": [98, 116, 114, 102, 115],
+      "mount_point": "/",
+      "total_space": 353342849024,
+      "available_space": 278255325184,
+      "is_removable": false
+    },
+    {
+      "DiskKind": "SSD",
+      "name": "/dev/nvme0n1p4",
+      "file_system": [102, 117, 115, 101, 98, 108, 107],
+      "mount_point": "/media/Public",
+      "total_space": 40047210496,
+      "available_space": 33337937920,
+      "is_removable": false
+    },
+    {
+      "DiskKind": "SSD",
+      "name": "/dev/nvme0n1p6",
+      "file_system": [98, 116, 114, 102, 115],
+      "mount_point": "/var/snap/firefox/common/host-hunspell",
+      "total_space": 353342849024,
+      "available_space": 278255325184,
+      "is_removable": false
+    },
+    {
+      "DiskKind": "SSD",
+      "name": "/dev/nvme0n1p1",
+      "file_system": [118, 102, 97, 116],
+      "mount_point": "/boot/efi",
+      "total_space": 268435456,
+      "available_space": 231120896,
+      "is_removable": false
+    }
+  ],
+  "networks": [
+    [
+      "lo",
+      {
+        "received": 164,
+        "total_received": 175250352,
+        "transmitted": 164,
+        "total_transmitted": 175250352,
+        "packets_received": 3,
+        "total_packets_received": 77917,
+        "packets_transmitted": 3,
+        "total_packets_transmitted": 77917,
+        "errors_on_received": 0,
+        "total_errors_on_received": 0,
+        "errors_on_transmitted": 0,
+        "total_errors_on_transmitted": 0,
+        "mac_address": [0, 0, 0, 0, 0, 0]
+      }
+    ],
+    [
+      "wlp1s0",
+      {
+        "received": 0,
+        "total_received": 495149578,
+        "transmitted": 0,
+        "total_transmitted": 17064801,
+        "packets_received": 0,
+        "total_packets_received": 382892,
+        "packets_transmitted": 0,
+        "total_packets_transmitted": 82427,
+        "errors_on_received": 0,
+        "total_errors_on_received": 0,
+        "errors_on_transmitted": 0,
+        "total_errors_on_transmitted": 0,
+        "mac_address": [20, 90, 252, 134, 6, 123]
+      }
+    ]
+  ],
+  "uptime": 4994,
+  "boot_time": 1686550944,
+  "load_average": { "one": 2.85, "five": 2.69, "fifteen": 2.55 },
+  "name": "Ubuntu",
+  "kernel_version": "6.2.0-20-generic",
+  "os_version": "23.04",
+  "long_os_version": "Linux 23.04 Ubuntu",
+  "distribution_id": "ubuntu",
+  "host_name": "flesh"
+}
