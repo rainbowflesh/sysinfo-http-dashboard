@@ -1,0 +1,16 @@
+{
+  "cpu_info": [
+    { "cpu_num": "cpu0", "percent": 13.953489, "frequency": 3385 },
+    { "cpu_num": "cpu1", "percent": 2.5, "frequency": 3389 },
+    { "cpu_num": "cpu2", "percent": 5.0, "frequency": 3608 },
+    { "cpu_num": "cpu3", "percent": 2.5, "frequency": 3952 },
+    { "cpu_num": "cpu4", "percent": 10.256411, "frequency": 4207 },
+    { "cpu_num": "cpu5", "percent": 5.0, "frequency": 3858 },
+    { "cpu_num": "cpu6", "percent": 2.5641026, "frequency": 3378 },
+    { "cpu_num": "cpu7", "percent": 0.0, "frequency": 4097 },
+    { "cpu_num": "cpu8", "percent": 2.5641026, "frequency": 4186 },
+    { "cpu_num": "cpu9", "percent": 15.000001, "frequency": 4222 },
+    { "cpu_num": "cpu10", "percent": 4.8780484, "frequency": 3934 },
+    { "cpu_num": "cpu11", "percent": 2.4390242, "frequency": 3726 }
+  ]
+}

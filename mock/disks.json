@@ -1,0 +1,28 @@
+{
+  "disk_info": [
+    {
+      "device_name": "/dev/nvme0n1p6",
+      "file_system": "btrfs",
+      "total_space": 353342849024,
+      "available_space": 245577818112
+    },
+    {
+      "device_name": "/dev/nvme0n1p4",
+      "file_system": "fuseblk",
+      "total_space": 40047210496,
+      "available_space": 33337937920
+    },
+    {
+      "device_name": "/dev/nvme0n1p1",
+      "file_system": "vfat",
+      "total_space": 268435456,
+      "available_space": 231120896
+    },
+    {
+      "device_name": "/dev/nvme0n1p6",
+      "file_system": "btrfs",
+      "total_space": 353342849024,
+      "available_space": 245577818112
+    }
+  ]
+}

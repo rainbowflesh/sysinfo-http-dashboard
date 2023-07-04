@@ -1,0 +1,16 @@
+{
+  "data": [
+    { "name": "acpitz temp1", "temperature": 64.0 },
+    { "name": "acpitz temp2", "temperature": 30.0 },
+    { "name": "amdgpu edge", "temperature": 56.0 },
+    { "name": "k10temp Tctl", "temperature": 64.5 },
+    {
+      "name": "nvme Composite SAMSUNG MZVLQ512HBLU-00B00 temp1",
+      "temperature": 41.85
+    },
+    {
+      "name": "nvme Sensor 1 SAMSUNG MZVLQ512HBLU-00B00 temp2",
+      "temperature": 41.85
+    }
+  ]
+}
