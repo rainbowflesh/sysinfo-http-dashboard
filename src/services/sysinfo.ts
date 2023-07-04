@@ -6,11 +6,11 @@ type RangeColorPair = [number, string];
 type milliseconds = number;
 
 const usageColorPairs: RangeColorPair[] = [
-  [90, "red"],
-  [75, "volcano"],
-  [50, "orange"],
-  [10, "green"],
-  [0, "blue"],
+  [90, "#ff4d4f"],
+  [75, "#ff7a45"],
+  [45, "#ffc53d"],
+  [10, "#52c41a"],
+  [0, "#69b1ff"],
 ];
 
 export function GetSysinfoData(infoName: string, refetchInterval: milliseconds | false) {
@@ -40,13 +40,13 @@ export const GetCpuInfo = (translator: any) => {
   const { data: cpuData, error, isError, isLoading, isLoadingError, isRefetchError } = GetSysinfoData("cpus", 1000);
   const [averageUsage, setAverageUsage] = useState<string>("0");
   const [cpuDetail, setCPUDetail] = useState<any>();
-  const [usageColor, setUsageColor] = useState<string>("green");
+  const [usageColor, setUsageColor] = useState<string>("#52c41a");
   useEffect(() => {
     const fetchCpuUsage = async () => {
       const cpus = cpuData?.data["cpu_info"];
       const cpuDetails = cpuData?.data["cpu_info"];
       if (isLoading || error || isError || isLoadingError || isRefetchError) {
-        setUsageColor("green");
+        setUsageColor("#52c41a");
         setAverageUsage(translator("loading"));
       } else {
         let cpuUsageSumArr: any[] = [];
