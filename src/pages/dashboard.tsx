@@ -1,27 +1,26 @@
-import { useTranslate } from "@refinedev/core";
-import { Card, Col, Row } from "antd";
+import { Col, Row } from "antd";
 import { CpuInfoCard } from "components/dashboard/cpu_info_card";
+import { OverviewCard } from "components/dashboard/overview_card";
+import { StatisticsCard } from "components/dashboard/statistics_card";
+import { SystemInfoCard } from "components/dashboard/sysinfo_card";
 
 export const Dashboard = () => {
-  const translate = useTranslate();
-  console.log(translate("dashboard.title"));
-
   return (
     <Row className="dashboard">
-      <Col span={14}>
+      <Col span={18}>
         <Row>
-          <Card title={translate("dashboard.overview")}></Card>
+          <OverviewCard />
         </Row>
         <Row>
           <CpuInfoCard />
         </Row>
       </Col>
-      <Col>
+      <Col span={6}>
         <Row>
-          <Card title={translate("dashboard.sysinfo")}>rererer</Card>
+          <SystemInfoCard />
         </Row>
         <Row>
-          <Card size="small" title={translate("dashboard.statistics")}></Card>
+          <StatisticsCard />
         </Row>
       </Col>
     </Row>
