@@ -111,8 +111,8 @@
     "autoCreate": "没有账号将自动注册",
     "changeOutputDevice": "已切换输出设备",
     "enterMsg": "输入消息",
-    "handUp": "jushou",
-    "handUpMsg": "fasonglejushou",
+    "handUp": "举手",
+    "handUpMsg": "发送了举手",
     "mute": "静音🔇",
     "nomute": "解除静音📣",
     "nopwd": "若无密码则留空",
@@ -143,6 +143,7 @@
     "title": "会议室列表"
   },
   "sysinfo": {
+    "sysinfo": "系统信息",
     "boot_time": "启动日期",
     "distribution_id": "系统",
     "host_name": "用户名",
