@@ -5,14 +5,12 @@ import { useEffect, useState } from "react";
 type RangeColorPair = [number, string];
 type milliseconds = number;
 
-const usageColorPairs: RangeColorPair[] = [
-  [90, "#ff4d4f"],
-  [75, "#ff7a45"],
-  [45, "#ffc53d"],
-  [10, "#52c41a"],
-  [0, "#69b1ff"],
-];
-
+/**
+ * **GetSysinfoData** provide dynamic fetch data, GET method;
+ * @param infoName name of the API uri
+ * @param refetchInterval milliseconds, 0 to disable;
+ * @return data, error, isError, isLoading, isLoadingError, isRefetchError
+ */
 export function GetSysinfoData(infoName: string, refetchInterval: milliseconds | false) {
   if (refetchInterval === 0) {
     refetchInterval = false;
@@ -22,7 +20,7 @@ export function GetSysinfoData(infoName: string, refetchInterval: milliseconds |
     url: `${apiUrl}/` + infoName,
     method: "get",
     queryOptions: {
-      refetchInterval: refetchInterval, // unit: milliseconds; 0 to disable
+      refetchInterval: refetchInterval,
     },
   });
   return {
@@ -35,8 +33,24 @@ export function GetSysinfoData(infoName: string, refetchInterval: milliseconds |
   };
 }
 
-// TODO: refactor
-export const GetCpuInfo = (translator: any) => {
+const usageColorPairs: RangeColorPair[] = [
+  [90, "#ff4d4f"],
+  [75, "#ff7a45"],
+  [45, "#ffc53d"],
+  [10, "#52c41a"],
+  [0, "#69b1ff"],
+];
+
+/**
+ * **GetCpuInfo** provide a dynamic color string based on load average;
+ * @param translator refine 'useTranslate()', gave a placeholder string if data is null
+ * @return averageUsage all logic thread average usage;
+ * @return usageColor hex color string;
+ * @return cpuDetail `logic thread number`, `usage percent`, `frequency (hz)`;
+ */
+export const GetCpuInfo = (
+  translator: any
+): [averageUsage: string, usageColor: string, cpuDetail: any, isLoading: boolean, isError: boolean] => {
   const { data: cpuData, error, isError, isLoading, isLoadingError, isRefetchError } = GetSysinfoData("cpus", 1000);
   const [averageUsage, setAverageUsage] = useState<string>("0");
   const [cpuDetail, setCPUDetail] = useState<any>();
@@ -54,7 +68,7 @@ export const GetCpuInfo = (translator: any) => {
           let cpu_average_usage = cpu["percent"];
           cpuUsageSumArr.push(cpu_average_usage);
         });
-        const average = GetAverage(cpuUsageSumArr);
+        const average = GetAverage(cpuUsageSumArr, 1);
         const colorValue = usageColorPairs.find(([range]) => Number(average) >= range)?.[1] ?? "blue";
         setUsageColor(colorValue);
         setAverageUsage(average);
