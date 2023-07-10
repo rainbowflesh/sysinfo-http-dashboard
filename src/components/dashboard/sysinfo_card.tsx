@@ -16,16 +16,16 @@ export const SystemInfoCard = () => {
   }
   return (
     <Card
-      title={translate("dashboard.sysinfo")}
+      title={translate("sysinfo.sysinfo")}
       className={"sysinfo-card"}
       style={{ maxWidth: "30rem" }}
       defaultValue={"empty"}
     >
       <Descriptions title="" column={1}>
-        <Descriptions.Item label={translate("dashboard.distribution_id")}>{sysinfo.distribution_id}</Descriptions.Item>
-        <Descriptions.Item label={translate("dashboard.host_name")}>{sysinfo.host_name}</Descriptions.Item>
-        <Descriptions.Item label={translate("dashboard.kernel_version")}>{sysinfo.kernel_version}</Descriptions.Item>
-        <Descriptions.Item label={translate("dashboard.os_version")}>{sysinfo.os_version}</Descriptions.Item>
+        <Descriptions.Item label={translate("sysinfo.distribution_id")}>{sysinfo.distribution_id}</Descriptions.Item>
+        <Descriptions.Item label={translate("sysinfo.host_name")}>{sysinfo.host_name}</Descriptions.Item>
+        <Descriptions.Item label={translate("sysinfo.kernel_version")}>{sysinfo.kernel_version}</Descriptions.Item>
+        <Descriptions.Item label={translate("sysinfo.os_version")}>{sysinfo.os_version}</Descriptions.Item>
       </Descriptions>
     </Card>
   );

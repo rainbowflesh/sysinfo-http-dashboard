@@ -11,18 +11,18 @@ export const CpuInfoCard = () => {
 
   const cpuDetailColumn = [
     {
-      title: translate("dashboard.cpu_logic_threads_number"),
+      title: translate("cpu_info.logic_threads_number"),
       dataIndex: "cpu_num",
       key: "cpu_num",
     },
     {
-      title: translate("dashboard.cpu_logic_threads_usage"),
+      title: translate("cpu_info.logic_threads_usage"),
       dataIndex: "percent",
       key: "percent",
       render: (data: any) => <Tag>{data.toFixed(1)}</Tag>,
     },
     {
-      title: translate("dashboard.cpu_logic_threads_frequency"),
+      title: translate("cpu_info.logic_threads_frequency"),
       dataIndex: "frequency",
       key: "frequency",
     },
@@ -30,7 +30,7 @@ export const CpuInfoCard = () => {
 
   const cpuOverview = (
     <div className="cpu-usage-overview-header">
-      <FundOutlined /> {translate("dashboard.cpu_average_usage")}
+      <FundOutlined /> {translate("cpu_info.average_usage")}
       <div className="cpu-usage-overview-content">
         <GaugePlot value={usage} color={usageColor} />
       </div>
@@ -49,7 +49,7 @@ export const CpuInfoCard = () => {
   );
 
   return (
-    <Card size="small" title={translate("dashboard.statues")} style={{ minWidth: "30%" }}>
+    <Card size="small" style={{ minWidth: "30%" }}>
       <Col className="cpu-usage">
         <Collapse accordion bordered={false} destroyInactivePanel>
           <CollapsePanel header={cpuOverview} key="1">

@@ -11,3 +11,21 @@ export function GetAverage(arr: number[], accuracy: number) {
   const avg = sum / arr.length;
   return avg.toFixed(accuracy);
 }
+
+/**
+ * **PrettyBytes** provide a function dynamically convert byte to other unit
+ *
+ * @param byteSize
+ *
+ * @return bytes -> "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"
+ *   */
+export function PrettyBytes(byteSize: any) {
+  let baseSize = 0,
+    calculate = parseInt(byteSize, 10) || 0;
+  for (; 1000 <= calculate && ++baseSize; ) calculate /= 1000;
+  return (
+    calculate.toFixed(10 > calculate && 0 < baseSize ? 1 : 0) +
+    " " +
+    ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"][baseSize]
+  );
+}

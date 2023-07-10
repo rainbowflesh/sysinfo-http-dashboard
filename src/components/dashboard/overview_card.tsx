@@ -9,7 +9,7 @@ export const OverviewCard = () => {
   const { data, isLoading } = GetSysinfoData("boot_time", 3600000);
   const [fmtTimeNow, setFmtTimeNow] = useState(dayjs().format("YYYY-MM-DD HH:mm:ss"));
   const [fmtUpTime, setFmtUpTime] = useState(translate("calculating"));
-  let fmtBootTime = translate("dashboard.boot_time");
+  let fmtBootTime = translate("sysinfo.boot_time");
 
   if (!isLoading && data) {
     let bootDate = dayjs.unix(Number(data.data));
@@ -43,9 +43,9 @@ export const OverviewCard = () => {
       defaultValue={"empty"}
     >
       <Descriptions title="" column={1}>
-        <Descriptions.Item label={translate("dashboard.time_now")}>{fmtTimeNow}</Descriptions.Item>
-        <Descriptions.Item label={translate("dashboard.up_time")}>
-          <Tooltip title={translate("dashboard.boot_time") + ": " + fmtBootTime}> {fmtUpTime}</Tooltip>
+        <Descriptions.Item label={translate("sysinfo.time_now")}>{fmtTimeNow}</Descriptions.Item>
+        <Descriptions.Item label={translate("sysinfo.up_time")}>
+          <Tooltip title={translate("sysinfo.boot_time") + ": " + fmtBootTime}> {fmtUpTime}</Tooltip>
         </Descriptions.Item>
       </Descriptions>
     </Card>
