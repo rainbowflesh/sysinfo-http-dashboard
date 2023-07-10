@@ -1,41 +1,40 @@
-import { useGetLocale, useTranslate } from "@refinedev/core";
+import { useTranslate } from "@refinedev/core";
 import { Card, Descriptions, Tooltip } from "antd";
-import i18n from "i18n";
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { GetSysinfoData } from "services/sysinfo";
 
 export const OverviewCard = () => {
   const translate = useTranslate();
-  const locale = useGetLocale();
+  const { data, isLoading } = GetSysinfoData("boot_time", 3600000);
+  const [fmtTimeNow, setFmtTimeNow] = useState(dayjs().format("YYYY-MM-DD HH:mm:ss"));
+  const [fmtUpTime, setFmtUpTime] = useState(translate("calculating"));
+  let fmtBootTime = translate("dashboard.boot_time");
 
-  const { data, isLoading } = GetSysinfoData("boot_time", 0);
-
-  const [timeNow, setTimeNow] = useState((new Date().getTime() / 1000).toFixed(0));
-  const [upTimeSec, setUpTimeSec] = useState(translate("loading"));
-  const [upTime, setUpTime] = useState(translate("loading"));
-  const [bootTime, setBootTime] = useState(translate("loading"));
+  if (!isLoading && data) {
+    let bootDate = dayjs.unix(Number(data.data));
+    fmtBootTime = bootDate.format("YYYY-MM-DD HH:mm:ss");
+  }
   useEffect(() => {
-    if (!isLoading && data) {
-      setBootTime(data!.data.toString());
-      setInterval(() => {
-        setTimeNow(
-          new Date().toLocaleString("zh", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            weekday: "long",
-            hour: "2-digit",
-            hour12: false,
-            minute: "2-digit",
-            second: "2-digit",
-          })
-        );
+    setInterval(() => {
+      setFmtTimeNow(dayjs().format("YYYY-MM-DD HH:mm:ss"));
+      // @ts-ignore
+      let uptimeSec = dayjs.duration(dayjs().diff(fmtBootTime, "seconds"), "seconds");
+      if (!isNaN(uptimeSec.seconds())) {
+        const formattedDuration =
+          `${Math.floor(uptimeSec.asDays())}` +
+          translate("time.day") +
+          `${uptimeSec.hours()}` +
+          translate("time.hour") +
+          `${uptimeSec.minutes()}` +
+          translate("time.minute") +
+          `${uptimeSec.seconds()}` +
+          translate("time.second");
+        setFmtUpTime(formattedDuration);
+      }
+    }, 1001);
+  }, [fmtBootTime, translate]);
 
-        // setUpTimeSec((Number(timeNow) - Number(bootTime)).toString());
-        // setUpTime(convertSeconds(runningTime));
-      }, 1001);
-    }
-  }, [isLoading, data, timeNow, bootTime]);
   return (
     <Card
       title={translate("dashboard.overview")}
@@ -44,14 +43,9 @@ export const OverviewCard = () => {
       defaultValue={"empty"}
     >
       <Descriptions title="" column={1}>
-        <Descriptions.Item label={translate("dashboard.time_now")}>{timeNow}</Descriptions.Item>
-        <Descriptions.Item label={translate("dashboard.boot_time")}>{bootTime}</Descriptions.Item>
+        <Descriptions.Item label={translate("dashboard.time_now")}>{fmtTimeNow}</Descriptions.Item>
         <Descriptions.Item label={translate("dashboard.up_time")}>
-          <Tooltip
-            title={translate("dashboard.up_time_sec") + ": " + upTimeSec + " " + translate("placeholder.time_sec")}
-          >
-            {upTime}
-          </Tooltip>
+          <Tooltip title={translate("dashboard.boot_time") + ": " + fmtBootTime}> {fmtUpTime}</Tooltip>
         </Descriptions.Item>
       </Descriptions>
     </Card>

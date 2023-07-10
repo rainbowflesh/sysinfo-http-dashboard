@@ -13,6 +13,7 @@ export const GaugePlot = (data: any) => {
       color: color,
     },
     type: "meter",
+    renderer: "svg",
     startAngle: Math.PI,
     endAngle: 2 * Math.PI,
     indicator: null,
@@ -22,6 +23,7 @@ export const GaugePlot = (data: any) => {
         style: {
           fontSize: "1.8rem",
           color: color,
+          zIndex: 0,
         },
         // @ts-ignore
         formatter: (percent: any) => (Object.values(percent)[0] * 100).toFixed(1) + " %",

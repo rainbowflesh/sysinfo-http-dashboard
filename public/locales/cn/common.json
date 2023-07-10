@@ -1,5 +1,12 @@
 {
   "": "",
+  "time": {
+    "millisecond": "毫秒",
+    "second": "秒",
+    "minute": "分",
+    "hour": "小时",
+    "day": "天"
+  },
   "project_name": {
     "ai_cam": "人工智能监控",
     "rk_d": "瑞芯微面板"
@@ -130,6 +137,7 @@
     "importProgress": "导入进度: {{processed}}/{{total}}"
   },
   "loading": "加载中",
+  "calculating": "计算中",
   "tags": {
     "clone": "复制"
   },
@@ -147,7 +155,14 @@
     "core_stats": "CPU 核心状态",
     "cpu_logic_threads_number": "核心",
     "cpu_logic_threads_usage": "占用率",
-    "cpu_logic_threads_frequency": "频率"
+    "cpu_logic_threads_frequency": "频率",
+    "time_now": "当前时间",
+    "boot_time": "启动日期",
+    "up_time": "在线时长",
+    "distribution_id": "系统",
+    "host_name": "用户名",
+    "kernel_version": "内核版本",
+    "os_version": "系统版本"
   },
   "table": {
     "actions": "操作"

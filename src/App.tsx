@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import * as colorMode from "./components/color-mode";
 import dataProvider from "@refinedev/simple-rest";
 import routerBindings, * as reactRouterV6 from "@refinedev/react-router-v6";
+import dayjs from "dayjs";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -21,6 +22,7 @@ function App() {
     changeLocale: (lang: string) => i18n.changeLanguage(lang),
     getLocale: () => i18n.language,
   };
+  dayjs.locale(i18n.language);
   return (
     <BrowserRouter>
       <RefineKbarProvider>
