@@ -8,8 +8,6 @@ export const DiskInfoCard = () => {
   const translate = useTranslate();
   const { data, isLoading, isError } = GetSysinfoData("disks", 360000);
 
-  console.log(data);
-
   const diskDetailColumn = [
     {
       title: translate("disk_info.device_name"),

@@ -14,6 +14,7 @@ import * as colorMode from "./components/color-mode";
 import dataProvider from "@refinedev/simple-rest";
 import routerBindings, * as reactRouterV6 from "@refinedev/react-router-v6";
 import dayjs from "dayjs";
+import { SettingPage } from "pages/settings";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -44,6 +45,10 @@ function App() {
                 meta: {
                   canDelete: true,
                 },
+              },
+              {
+                name: "settings",
+                list: "/settings",
               },
             ]}
             options={{
@@ -79,6 +84,7 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/devices" index element={<DeviceList />} />
+                <Route path="/settings" index element={<SettingPage />} />
               </Route>
             </Routes>
             <RefineKbar />

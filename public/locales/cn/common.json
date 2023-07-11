@@ -1,5 +1,4 @@
 {
-  "": "",
   "actions": { "create": "创建", "edit": "修改", "list": "列表", "show": "查看" },
   "buttons": {
     "audio": "打开音频",
@@ -23,6 +22,7 @@
     "notAccessTitle": "权限错误",
     "output": "播放器",
     "refresh": "刷新",
+    "reset": "重置",
     "save": "保存",
     "share": "分享",
     "show": "显示",
@@ -142,6 +142,11 @@
     "table": { "creation_time": "创建时间", "id": "房间 ID", "name": "房间名", "num_participants": "在线人数" },
     "title": "会议室列表"
   },
+  "setting": {
+    "setting": "设置",
+    "cpu_refetch_interval": "CPU 信息更新频率",
+    "disk_refetch_interval": "硬盘信息更新频率"
+  },
   "sysinfo": {
     "sysinfo": "系统信息",
     "boot_time": "启动日期",
@@ -154,6 +159,14 @@
   },
   "table": { "actions": "操作" },
   "tags": { "clone": "复制" },
-  "time": { "day": "天", "hour": "小时", "millisecond": "毫秒", "minute": "分", "second": "秒" },
+  "time": {
+    "day": "天",
+    "hour": "小时",
+    "millisecond": "毫秒",
+    "minute": "分",
+    "second": "秒",
+    "times_sec": "秒每次",
+    "sec_times": "次每秒"
+  },
   "warnWhenUnsavedChanges": "改动未保存, 确认退出么?"
 }
