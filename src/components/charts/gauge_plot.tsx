@@ -31,5 +31,5 @@ export const GaugePlot = (data: any) => {
     },
   };
   // @ts-ignore
-  return <Gauge {...config} style={{ width: "10rem", height: "8rem" }} />;
+  return <Gauge {...config} style={{ width: "10rem", height: "8rem", margin: "0 0 0 0.5rem" }} />;
 };

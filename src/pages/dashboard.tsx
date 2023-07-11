@@ -13,7 +13,7 @@ export const Dashboard = () => {
           <OverviewCard />
         </Row>
         <Row>
-          <Col>
+          <Col span={9}>
             <CpuInfoCard />
           </Col>
           <Col>
