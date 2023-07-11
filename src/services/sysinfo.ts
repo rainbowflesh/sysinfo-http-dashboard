@@ -1,6 +1,5 @@
 import { GetAverage } from "utils/math";
 import { BaseRecord, CustomResponse, useApiUrl, useCustom } from "@refinedev/core";
-import { useState } from "react";
 
 type RangeColorPair = [number, string];
 type milliseconds = number;

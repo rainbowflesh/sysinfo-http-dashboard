@@ -67,7 +67,8 @@
     "error": "错误! (状态码: {{statusCode}})",
     "importProgress": "导入进度: {{processed}}/{{total}}",
     "success": "成功",
-    "undoable": "还有 {{seconds}} 秒可以撤回"
+    "undoable": "还有 {{seconds}} 秒可以撤回",
+    "success_save_to_local": "设置保存成功"
   },
   "pages": {
     "error": {
@@ -166,6 +167,7 @@
     "minute": "分",
     "second": "秒",
     "times_sec": "秒每次",
+    "times_milisec": "毫秒每次",
     "sec_times": "次每秒"
   },
   "warnWhenUnsavedChanges": "改动未保存, 确认退出么?"

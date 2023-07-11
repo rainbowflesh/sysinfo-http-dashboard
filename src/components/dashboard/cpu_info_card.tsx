@@ -8,9 +8,14 @@ import { useEffect, useState } from "react";
 
 export const CpuInfoCard = () => {
   const translate = useTranslate();
-  const { data, isError, isLoading } = GetSysinfoData("cpus", 3000);
+  let refetchInterval = localStorage.getItem("cpu_refetch_interval");
+  if (!refetchInterval) {
+    refetchInterval = "3000";
+  }
+  const { data, isError, isLoading } = GetSysinfoData("cpus", Number(refetchInterval));
   const [average, setAverage] = useState<any>();
   const [color, setColor] = useState("#52c41a");
+
   useEffect(() => {
     setAverage(GetLoadAverage(data, "cpu_info", "percent"));
     setColor(GetAverageColor(Number(average)));
