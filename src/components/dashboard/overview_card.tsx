@@ -21,16 +21,16 @@ export const OverviewCard = () => {
       // @ts-ignore
       let uptimeSec = dayjs.duration(dayjs().diff(fmtBootTime, "seconds"), "seconds");
       if (!isNaN(uptimeSec.seconds())) {
-        const formattedDuration =
+        setFmtUpTime(
           `${Math.floor(uptimeSec.asDays())}` +
-          translate("time.day") +
-          `${uptimeSec.hours()}` +
-          translate("time.hour") +
-          `${uptimeSec.minutes()}` +
-          translate("time.minute") +
-          `${uptimeSec.seconds()}` +
-          translate("time.second");
-        setFmtUpTime(formattedDuration);
+            translate("time.day") +
+            `${uptimeSec.hours()}` +
+            translate("time.hour") +
+            `${uptimeSec.minutes()}` +
+            translate("time.minute") +
+            `${uptimeSec.seconds()}` +
+            translate("time.second")
+        );
       }
     }, 1001);
   }, [fmtBootTime, translate]);

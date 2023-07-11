@@ -143,8 +143,8 @@
     "table": { "creation_time": "创建时间", "id": "房间 ID", "name": "房间名", "num_participants": "在线人数" },
     "title": "会议室列表"
   },
-  "setting": {
-    "setting": "设置",
+  "settings": {
+    "settings": "设置",
     "cpu_refetch_interval": "CPU 信息更新频率",
     "disk_refetch_interval": "硬盘信息更新频率"
   },
