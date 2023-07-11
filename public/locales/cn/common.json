@@ -39,6 +39,8 @@
     "usage": "CPU 占用率"
   },
   "dashboard": {
+    "dashboard": "面板",
+    "dashboards": "面板",
     "overview": "概览",
     "random": "etc..",
     "scheduler": "日程表",
