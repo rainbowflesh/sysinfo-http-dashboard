@@ -3,19 +3,24 @@ import { Button, InputNumber, Space } from "antd";
 import { useState } from "react";
 
 export const RefetchIntervalCard = (intervals: {
+  which: string;
   defaultInterval: number;
   minInterval: number;
   maxInterval: number;
 }) => {
   const translate = useTranslate();
-  const [value, setValue] = useState<any>(intervals.defaultInterval);
+  let storedValue = localStorage.getItem(intervals.which);
+  if (!storedValue) {
+    storedValue = intervals.defaultInterval.toString();
+  }
+  const [value, setValue] = useState<any>(storedValue);
   const { open } = useNotification();
 
   return (
     <Space>
       <Button
         onClick={() => {
-          setValue(3000);
+          setValue(storedValue);
         }}
       >
         {translate("buttons.reset")}
@@ -37,7 +42,7 @@ export const RefetchIntervalCard = (intervals: {
             message: translate("notifications.success_save_to_local"),
             key: "success_save_to_local",
           });
-          localStorage.setItem("cpu_refetch_interval", value);
+          localStorage.setItem(intervals.which, value);
         }}
       >
         {translate("buttons.save")}
