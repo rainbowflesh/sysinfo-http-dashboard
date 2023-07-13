@@ -6,7 +6,7 @@ import { GaugePlot } from "components/charts/gauge_plot";
 import { GetAverageColor, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
 
-export const CpuInfoCard = () => {
+export const CpuCard = () => {
   const translate = useTranslate();
   let refetchInterval = localStorage.getItem("cpu_refetch_interval");
   if (!refetchInterval) {

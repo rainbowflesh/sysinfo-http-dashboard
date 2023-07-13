@@ -4,7 +4,7 @@ import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GetSysinfoData } from "services/sysinfo";
 import { PrettyBytes } from "utils/math";
 
-export const DiskInfoCard = () => {
+export const DiskCard = () => {
   const translate = useTranslate();
   const { data, isLoading, isError } = GetSysinfoData("disks", 360000);
 

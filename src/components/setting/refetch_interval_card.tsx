@@ -7,6 +7,7 @@ export const RefetchIntervalCard = (intervals: {
   defaultInterval: number;
   minInterval: number;
   maxInterval: number;
+  step: number;
 }) => {
   const translate = useTranslate();
   let storedValue = localStorage.getItem(intervals.which);
@@ -31,7 +32,7 @@ export const RefetchIntervalCard = (intervals: {
         value={value}
         onChange={setValue}
         addonAfter={translate("time.times_milisec")}
-        step={1000}
+        step={intervals.step}
         style={{ minWidth: "10rem" }}
       />
       <Button

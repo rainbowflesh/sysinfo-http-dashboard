@@ -12,8 +12,18 @@ export const SettingPage = () => {
           <RefetchIntervalCard
             which="cpu_refetch_interval"
             defaultInterval={3000}
-            minInterval={1000}
+            minInterval={500}
             maxInterval={10000}
+            step={1000}
+          />
+        </Card>
+        <Card title={translate("settings.disk_refetch_interval")}>
+          <RefetchIntervalCard
+            which="disk_refetch_interval"
+            defaultInterval={3600000}
+            minInterval={1000}
+            maxInterval={86400000}
+            step={60000}
           />
         </Card>
       </Row>

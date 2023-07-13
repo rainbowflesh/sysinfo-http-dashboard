@@ -1,6 +1,6 @@
 import { Col, Row } from "antd";
-import { CpuInfoCard } from "components/dashboard/cpu_info_card";
-import { DiskInfoCard } from "components/dashboard/disk_info_card";
+import { CpuCard } from "components/dashboard/cpu_card";
+import { DiskCard } from "components/dashboard/disk_card";
 import { OverviewCard } from "components/dashboard/overview_card";
 import { StatisticsCard } from "components/dashboard/statistics_card";
 import { SystemInfoCard } from "components/dashboard/sysinfo_card";
@@ -14,10 +14,10 @@ export const Dashboard = () => {
         </Row>
         <Row>
           <Col span={9}>
-            <CpuInfoCard />
+            <CpuCard />
           </Col>
           <Col>
-            <DiskInfoCard />
+            <DiskCard />
           </Col>
         </Row>
       </Col>
