@@ -4,8 +4,7 @@ import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GetSysinfoData } from "services/sysinfo";
 import { PrettyBytes } from "utils/math";
 import { DatabaseOutlined } from "@ant-design/icons";
-import { RefetchInterval } from "interfaces/service.enum";
-import { API_URI } from "interfaces/service.enum";
+import { API_URI, RefetchInterval } from "interfaces/sysinfo.enum";
 
 export const DiskCard = () => {
   const translate = useTranslate();

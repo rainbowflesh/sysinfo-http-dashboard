@@ -6,8 +6,7 @@ import { GaugePlot } from "components/charts/gauge_plot";
 import { GetColorByAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
 import { PrettyBytes } from "utils/math";
-import { DefaultColor, RefetchInterval } from "interfaces/service.enum";
-import { API_URI } from "interfaces/service.enum";
+import { API_URI, DefaultColor, RefetchInterval } from "interfaces/sysinfo.enum";
 
 export const MemoryCard = () => {
   const translate = useTranslate();

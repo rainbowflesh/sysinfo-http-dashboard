@@ -1,8 +1,7 @@
 import { useTranslate } from "@refinedev/core";
 import { Card, Descriptions, Tooltip } from "antd";
 import dayjs from "dayjs";
-import { API_URI } from "interfaces/service.enum";
-import { RefetchInterval } from "interfaces/service.enum";
+import { API_URI, RefetchInterval } from "interfaces/sysinfo.enum";
 import { useEffect, useState } from "react";
 import { GetSysinfoData } from "services/sysinfo";
 

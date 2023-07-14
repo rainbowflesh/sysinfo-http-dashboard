@@ -1,6 +1,6 @@
 import { GetAverage } from "utils/math";
 import { BaseRecord, CustomResponse, useApiUrl, useCustom } from "@refinedev/core";
-import { RangeColorPair, milliseconds } from "interfaces/service.type";
+import { RangeColorPair, milliseconds } from "interfaces/sysinfo.type";
 
 /**
  * `GetSysinfoData` wrap of the `useApiUrl()` function

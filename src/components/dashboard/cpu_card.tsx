@@ -5,7 +5,7 @@ import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GaugePlot } from "components/charts/gauge_plot";
 import { GetColorByAverage, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
-import { API_URI, DefaultColor, RefetchInterval } from "interfaces/service.enum";
+import { API_URI, DefaultColor, RefetchInterval } from "interfaces/sysinfo.enum";
 
 export const CpuCard = () => {
   const translate = useTranslate();
