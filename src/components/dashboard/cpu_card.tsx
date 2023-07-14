@@ -3,7 +3,7 @@ import { FundOutlined } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GaugePlot } from "components/charts/gauge_plot";
-import { GetAverageColor, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
+import { GetColorByAverage, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
 
 export const CpuCard = () => {
@@ -18,7 +18,7 @@ export const CpuCard = () => {
 
   useEffect(() => {
     setAverage(GetLoadAverage(data, "cpu_info", "percent"));
-    setColor(GetAverageColor(Number(average)));
+    setColor(GetColorByAverage(Number(average)));
   }, [average, data]);
 
   const cpuDetailColumn = [
