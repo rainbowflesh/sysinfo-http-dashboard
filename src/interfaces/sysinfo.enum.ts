@@ -2,8 +2,9 @@ export enum API_URI {
   BootTime = "boot_time",
   Sysinfo = "sysinfo",
   Memory = "memory",
-  Disk = "disks",
-  Cpu = "cpus",
+  Disks = "disks",
+  Cpus = "cpus",
+  Networks = "networks",
 }
 
 /**
@@ -11,10 +12,10 @@ export enum API_URI {
  */
 export enum RefetchInterval {
   // Customized value
-  Cpu = 3000,
-  Disk = 3600000,
+  Cpus = 3000,
+  Disks = 3600000,
   Memory = 2000,
-  Network = 3000,
+  Networks = 3000,
   Overview = 3600000,
 
   // Const value

@@ -8,7 +8,8 @@ import { API_URI, RefetchInterval } from "interfaces/sysinfo.enum";
 
 export const DiskCard = () => {
   const translate = useTranslate();
-  const { data, isLoading, isError } = GetSysinfoData(API_URI.Disk, RefetchInterval.Disk);
+  const refetchInterval = localStorage.getItem("disk_refetch_interval") || RefetchInterval.Disks.toString();
+  const { data, isLoading, isError } = GetSysinfoData(API_URI.Disks, Number(refetchInterval));
 
   const diskDetailColumn = [
     {

@@ -77,7 +77,10 @@
   },
   "network_info": {
     "title": "网络信息",
-    "description": "网络信息"
+    "description": "网络信息",
+    "interface_name": "网络适配器",
+    "data_received": "收包",
+    "data_transmitted": "发包"
   },
   "notifications": {
     "createError": "创建 {{resource}} 时出错! (状态码: {{statusCode}})",
@@ -167,9 +170,10 @@
   },
   "settings": {
     "settings": "设置",
-    "cpu_refetch_interval": "CPU 信息更新频率",
-    "disk_refetch_interval": "硬盘信息更新频率",
-    "network_refetch_interval": "网络信息更新频率"
+    "cpu_refetch_interval": "CPU 更新频率",
+    "disk_refetch_interval": "硬盘更新频率",
+    "network_refetch_interval": "网络更新频率",
+    "memory_refetch_interval": "内存更新频率"
   },
   "sysinfo": {
     "title": "系统信息",

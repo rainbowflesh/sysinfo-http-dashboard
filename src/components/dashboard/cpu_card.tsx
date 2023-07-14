@@ -9,8 +9,8 @@ import { API_URI, DefaultColor, RefetchInterval } from "interfaces/sysinfo.enum"
 
 export const CpuCard = () => {
   const translate = useTranslate();
-  const refetchInterval = localStorage.getItem("cpu_refetch_interval") || RefetchInterval.Cpu.toString();
-  const { data, isError, isLoading } = GetSysinfoData(API_URI.Cpu, Number(refetchInterval));
+  const refetchInterval = localStorage.getItem("cpu_refetch_interval") || RefetchInterval.Cpus.toString();
+  const { data, isError, isLoading } = GetSysinfoData(API_URI.Cpus, Number(refetchInterval));
   const [average, setAverage] = useState<any>();
   const [color, setColor] = useState(DefaultColor);
 
