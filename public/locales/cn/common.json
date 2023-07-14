@@ -31,8 +31,9 @@
   },
   "calculating": "计算中",
   "cpu_info": {
+    "description": "CPU 状态",
     "core_stats": "CPU 核心状态",
-    "average_usage": "CPU 平均占用率",
+    "average_usage": "CPU 占用率",
     "logic_threads_frequency": "频率",
     "logic_threads_number": "核心",
     "logic_threads_usage": "占用率",
@@ -52,13 +53,28 @@
   },
   "devices": { "devices": "设备" },
   "disk_info": {
-    "disk_info": "硬盘信息",
+    "description": "硬盘信息",
     "available_space": "可用空间",
     "device_name": "设备名",
     "file_system": "文件系统",
     "total_space": "总空间"
   },
   "loading": "加载中",
+  "memory_info": {
+    "description": "内存信息",
+    "memory_ratio": "内存占用率",
+    "swap_ratio": "SWAP 占用率",
+    "available_memory": "可用内存",
+    "free_memory": "剩余内存",
+    "free_swap": "剩余 SWAP",
+    "total_memory": "总内存",
+    "total_swap": "总 SWAP",
+    "used_memory": "已用内存",
+    "used_swap": "已用 SWAP"
+  },
+  "network_info": {
+    "description": "网络信息"
+  },
   "notifications": {
     "createError": "创建 {{resource}} 时出错! (状态码: {{statusCode}})",
     "createSuccess": "成功创建 {{resource}}",

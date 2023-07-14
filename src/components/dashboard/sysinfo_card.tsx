@@ -18,10 +18,10 @@ export const SystemInfoCard = () => {
     <Card
       title={translate("sysinfo.sysinfo")}
       className={"sysinfo-card"}
-      style={{ maxWidth: "30rem" }}
+      style={{ maxWidth: "30rem", maxHeight: "15rem" }}
       defaultValue={"empty"}
     >
-      <Descriptions title="" column={1}>
+      <Descriptions title="" column={2}>
         <Descriptions.Item label={translate("sysinfo.distribution_id")}>{sysinfo.distribution_id}</Descriptions.Item>
         <Descriptions.Item label={translate("sysinfo.host_name")}>{sysinfo.host_name}</Descriptions.Item>
         <Descriptions.Item label={translate("sysinfo.kernel_version")}>{sysinfo.kernel_version}</Descriptions.Item>

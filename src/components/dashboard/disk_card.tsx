@@ -3,6 +3,7 @@ import { useTranslate } from "@refinedev/core";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GetSysinfoData } from "services/sysinfo";
 import { PrettyBytes } from "utils/math";
+import { DatabaseOutlined } from "@ant-design/icons";
 
 export const DiskCard = () => {
   const translate = useTranslate();
@@ -45,11 +46,17 @@ export const DiskCard = () => {
     ></Table>
   );
 
+  const diskHeader = (
+    <div className="cpu-usage-overview-header">
+      <DatabaseOutlined /> {translate("disk_info.description")}
+    </div>
+  );
+
   return (
     <Card size="small">
       <Col className="disk-usage">
         <Collapse accordion bordered={false} destroyInactivePanel>
-          <CollapsePanel header={translate("disk_info.disk_info")} key="1">
+          <CollapsePanel header={diskHeader} key="1">
             {diskDetailItem}
           </CollapsePanel>
         </Collapse>

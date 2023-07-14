@@ -12,6 +12,11 @@ export function GetAverage(arr: number[], accuracy: number) {
   return avg.toFixed(accuracy);
 }
 
+export function GetRatio(numerator: number, denominator: number) {
+  const ratio = numerator / denominator;
+  return ratio;
+}
+
 /**
  * **PrettyBytes** provide a function dynamically convert byte to other unit
  *

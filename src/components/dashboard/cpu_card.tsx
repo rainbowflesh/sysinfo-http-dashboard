@@ -1,5 +1,5 @@
 import { Card, Col, Collapse, Table, Tag } from "antd";
-import { FundOutlined } from "@ant-design/icons";
+import { FundOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GaugePlot } from "components/charts/gauge_plot";
@@ -42,7 +42,7 @@ export const CpuCard = () => {
 
   const cpuOverview = (
     <div className="cpu-usage-overview-header">
-      <FundOutlined /> {translate("cpu_info.average_usage")}
+      <ThunderboltOutlined /> {translate("cpu_info.description")}
       <div className="cpu-usage-overview-content">{<GaugePlot value={average} color={color} />}</div>
     </div>
   );
