@@ -168,7 +168,8 @@
   "settings": {
     "settings": "设置",
     "cpu_refetch_interval": "CPU 信息更新频率",
-    "disk_refetch_interval": "硬盘信息更新频率"
+    "disk_refetch_interval": "硬盘信息更新频率",
+    "network_refetch_interval": "网络信息更新频率"
   },
   "sysinfo": {
     "title": "系统信息",

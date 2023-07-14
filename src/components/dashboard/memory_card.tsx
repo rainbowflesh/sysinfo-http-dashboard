@@ -12,11 +12,7 @@ export const MemoryCard = () => {
   const translate = useTranslate();
   const [memRatio, setMemRatio] = useState<any>();
   const [color, setColor] = useState(DefaultColor);
-
-  let refetchInterval = localStorage.getItem("memory_refetch_interval");
-  if (!refetchInterval) {
-    refetchInterval = RefetchInterval.Memory.toString();
-  }
+  const refetchInterval = localStorage.getItem("memory_refetch_interval") || RefetchInterval.Memory.toString();
   const { data, isError, isLoading } = GetSysinfoData(API_URI.Memory, Number(refetchInterval));
 
   useEffect(() => {

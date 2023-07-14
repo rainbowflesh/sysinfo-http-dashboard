@@ -10,10 +10,7 @@ export const RefetchIntervalCard = (intervals: {
   step: number;
 }) => {
   const translate = useTranslate();
-  let storedValue = localStorage.getItem(intervals.which);
-  if (!storedValue) {
-    storedValue = intervals.defaultInterval.toString();
-  }
+  const storedValue = localStorage.getItem(intervals.which) || intervals.defaultInterval.toString();
   const [value, setValue] = useState<any>(storedValue);
   const { open } = useNotification();
 
