@@ -1,29 +1,34 @@
-import { useTranslate } from "@refinedev/core";
-import { Card, Col, Row } from "antd";
-import { CpuInfoCard } from "components/dashboard/cpu_info_card";
+import { Col, Row } from "antd";
+import { CpuCard } from "components/dashboard/cpu_card";
+import { DiskCard } from "components/dashboard/disk_card";
+import { MemoryCard } from "components/dashboard/memory_card";
+import { NetworkCard } from "components/dashboard/network_card";
+import { OverviewCard } from "components/dashboard/overview_card";
+import { SystemInfoCard } from "components/dashboard/sysinfo_card";
 
 export const Dashboard = () => {
-  const translate = useTranslate();
-  console.log(translate("dashboard.title"));
-
   return (
-    <Row className="dashboard">
-      <Col span={14}>
-        <Row>
-          <Card title={translate("dashboard.overview")}></Card>
-        </Row>
-        <Row>
-          <CpuInfoCard />
-        </Row>
-      </Col>
-      <Col>
-        <Row>
-          <Card title={translate("dashboard.sysinfo")}>rererer</Card>
-        </Row>
-        <Row>
-          <Card size="small" title={translate("dashboard.statistics")}></Card>
-        </Row>
-      </Col>
-    </Row>
+    <div className="dashboard">
+      <Row>
+        <SystemInfoCard />
+        <OverviewCard />
+      </Row>
+      <Row>
+        <Col>
+          <CpuCard />
+        </Col>
+        <Col>
+          <MemoryCard />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <DiskCard />
+        </Col>
+        <Col>
+          <NetworkCard />
+        </Col>
+      </Row>
+    </div>
   );
 };

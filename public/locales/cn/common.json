@@ -1,180 +1,192 @@
 {
-  "": "",
-  "project_name": {
-    "ai_cam": "人工智能监控",
-    "rk_d": "瑞芯微面板"
-  },
-  "pages": {
-    "login": {
-      "title": "登录或注册你的账号*",
-      "signin": "登录",
-      "signup": "注册",
-      "divider": "或者",
-      "fields": {
-        "email": "邮箱",
-        "username": "用户名",
-        "password": "密码"
-      },
-      "success": "登录成功",
-      "errors": {
-        "title": "登录错误",
-        "validEmail": "无效的邮箱地址",
-        "invalid": "用户名或密码错误"
-      },
-      "buttons": {
-        "submit": "登录或注册",
-        "forgotPassword": "忘记密码?",
-        "noAccount": "还没有账号?",
-        "rememberMe": "记住登录",
-        "haveAccount": "已有账号?"
-      }
-    },
-    "logout": {
-      "success": "已登出"
-    },
-    "forgotPassword": {
-      "title": "忘记密码?",
-      "fields": {
-        "email": "邮箱"
-      },
-      "errors": {
-        "validEmail": "无效的邮箱地址"
-      },
-      "buttons": {
-        "submit": "发送重置"
-      }
-    },
-    "updatePassword": {
-      "title": "修改密码",
-      "fields": {
-        "password": "新密码",
-        "confirmPassword": "确认新密码"
-      },
-      "errors": {
-        "confirmPasswordNotMatch": "密码不一致"
-      },
-      "buttons": {
-        "submit": "更新"
-      }
-    },
-    "error": {
-      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
-      "404": "出错了, 页面不存在.",
-      "resource404": "Are you sure you have created the {{resource}} resource.",
-      "backHome": "返回主页"
-    }
-  },
-  "actions": {
-    "list": "列表",
-    "create": "创建",
-    "edit": "修改",
-    "show": "查看"
-  },
+  "actions": { "create": "创建", "edit": "修改", "list": "列表", "show": "查看" },
   "buttons": {
-    "create": "创建",
-    "save": "保存",
-    "logout": "登出",
-    "delete": "删除",
-    "edit": "编辑",
-    "cancel": "取消",
-    "confirm": "确认?",
-    "filter": "筛选",
-    "clear": "清除",
-    "refresh": "刷新",
-    "show": "显示",
-    "undo": "撤销",
-    "import": "导入",
-    "clone": "复制",
-    "notAccessTitle": "权限错误",
-    "microphone": "麦克风",
-    "camera": "摄像头",
-    "joinLabel": "加入房间",
-    "enableHq": "启用高清串流",
-    "disableHq": "关闭高清串流",
     "audio": "打开音频",
+    "camera": "摄像头",
+    "cancel": "取消",
     "chat": "聊天",
+    "clear": "清除",
+    "clone": "复制",
+    "confirm": "确认?",
+    "create": "创建",
+    "delete": "删除",
+    "disableHq": "关闭高清串流",
+    "edit": "编辑",
+    "enableHq": "启用高清串流",
+    "filter": "筛选",
+    "import": "导入",
+    "joinLabel": "加入房间",
     "leave": "离开会议",
+    "logout": "登出",
+    "microphone": "麦克风",
+    "notAccessTitle": "权限错误",
+    "output": "播放器",
+    "refresh": "刷新",
+    "reset": "重置",
+    "save": "保存",
     "share": "分享",
+    "show": "显示",
     "stopShare": "结束分享",
-    "output": "播放器"
+    "undo": "撤销"
   },
-  "placeholder": {
-    "username": "请输入用户名",
-    "room": "输入会议名称",
-    "roomId": "输入会议号",
-    "auto": "自动获取",
-    "success": "成功",
-    "successCreate": "成功创建",
-    "autoCreate": "没有账号将自动注册",
-    "nopwd": "若无密码则留空",
-    "streamSetting": "高级串流设置",
-    "sendMsg": "发送",
-    "enterMsg": "输入消息",
-    "mute": "静音🔇",
-    "nomute": "解除静音📣",
-    "changeOutputDevice": "已切换输出设备",
-    "handUp": "jushou",
-    "handUpMsg": "fasonglejushou"
-  },
-  "warnWhenUnsavedChanges": "改动未保存, 确认退出么?",
-  "notifications": {
-    "success": "成功",
-    "error": "错误! (状态码: {{statusCode}})",
-    "undoable": "还有 {{seconds}} 秒可以撤回",
-    "createSuccess": "成功创建 {{resource}}",
-    "createError": "创建 {{resource}} 时出错! (状态码: {{statusCode}})",
-    "deleteSuccess": "成功删除 {{resource}}",
-    "deleteError": "删除 {{resource}} 时出错! (状态码: {{statusCode}})",
-    "editSuccess": "成功编辑 {{resource}}",
-    "editError": "编辑 {{resource}} 时出错! (状态码: {{statusCode}})",
-    "importProgress": "导入进度: {{processed}}/{{total}}"
-  },
-  "loading": "加载中",
-  "tags": {
-    "clone": "复制"
+  "calculating": "计算中",
+  "cpu_info": {
+    "description": "CPU 状态",
+    "core_stats": "CPU 核心状态",
+    "average_usage": "CPU 占用率",
+    "logic_threads_frequency": "频率",
+    "logic_threads_number": "核心",
+    "logic_threads_usage": "占用率",
+    "usage": "CPU 占用率"
   },
   "dashboard": {
-    "title": "仪表盘",
-    "statues": "状态",
+    "dashboard": "面板",
+    "dashboards": "面板",
     "overview": "概览",
-    "statistics": "统计",
-    "sysinfo": "系统信息",
     "random": "etc..",
     "scheduler": "日程表",
     "scheduler_task": "计划任务",
-    "cpu_usage": "CPU 占用率",
-    "cpu_average_usage": "CPU 平均占用率",
-    "core_stats": "CPU 核心状态",
-    "cpu_logic_threads_number": "核心",
-    "cpu_logic_threads_usage": "占用率",
-    "cpu_logic_threads_frequency": "频率"
+    "statistics": "统计",
+    "statues": "状态",
+    "sysinfo": "系统信息",
+    "title": "仪表盘"
   },
-  "table": {
-    "actions": "操作"
+  "devices": { "devices": "设备" },
+  "disk_info": {
+    "description": "硬盘信息",
+    "available_space": "可用空间",
+    "device_name": "设备名",
+    "file_system": "文件系统",
+    "total_space": "总空间"
   },
-  "rooms": {
-    "id": "会议号",
-    "rooms": "会议室",
-    "live": "显示活跃房间",
-    "liveList": "活跃房间列表",
-    "join": "加入自定义房间",
-    "custom": "加入房间",
-    "name": "会议名称",
-    "pwd": "房间密码",
-    "host": "主持人",
-    "title": "会议室列表",
-    "roomList": "会议室列表",
-    "create": "创建会议室",
-    "date": "预约",
-    "change_room": "切换房间",
-    "table": {
-      "creation_time": "创建时间",
-      "name": "房间名",
-      "id": "房间 ID",
-      "num_participants": "在线人数"
+  "loading": "加载中",
+  "memory_info": {
+    "description": "内存信息",
+    "memory_ratio": "内存占用率",
+    "swap_ratio": "SWAP 占用率",
+    "available_memory": "可用内存",
+    "free_memory": "剩余内存",
+    "free_swap": "剩余 SWAP",
+    "total_memory": "总内存",
+    "total_swap": "总 SWAP",
+    "used_memory": "已用内存",
+    "used_swap": "已用 SWAP"
+  },
+  "network_info": {
+    "description": "网络信息"
+  },
+  "notifications": {
+    "createError": "创建 {{resource}} 时出错! (状态码: {{statusCode}})",
+    "createSuccess": "成功创建 {{resource}}",
+    "deleteError": "删除 {{resource}} 时出错! (状态码: {{statusCode}})",
+    "deleteSuccess": "成功删除 {{resource}}",
+    "editError": "编辑 {{resource}} 时出错! (状态码: {{statusCode}})",
+    "editSuccess": "成功编辑 {{resource}}",
+    "error": "错误! (状态码: {{statusCode}})",
+    "importProgress": "导入进度: {{processed}}/{{total}}",
+    "success": "成功",
+    "undoable": "还有 {{seconds}} 秒可以撤回",
+    "success_save_to_local": "设置保存成功"
+  },
+  "pages": {
+    "error": {
+      "404": "出错了, 页面不存在.",
+      "backHome": "返回主页",
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "resource404": "Are you sure you have created the {{resource}} resource."
+    },
+    "forgotPassword": {
+      "buttons": { "submit": "发送重置" },
+      "errors": { "validEmail": "无效的邮箱地址" },
+      "fields": { "email": "邮箱" },
+      "title": "忘记密码?"
+    },
+    "login": {
+      "buttons": {
+        "forgotPassword": "忘记密码?",
+        "haveAccount": "已有账号?",
+        "noAccount": "还没有账号?",
+        "rememberMe": "记住登录",
+        "submit": "登录或注册"
+      },
+      "divider": "或者",
+      "errors": { "invalid": "用户名或密码错误", "title": "登录错误", "validEmail": "无效的邮箱地址" },
+      "fields": { "email": "邮箱", "password": "密码", "username": "用户名" },
+      "signin": "登录",
+      "signup": "注册",
+      "success": "登录成功",
+      "title": "登录或注册你的账号*"
+    },
+    "logout": { "success": "已登出" },
+    "updatePassword": {
+      "buttons": { "submit": "更新" },
+      "errors": { "confirmPasswordNotMatch": "密码不一致" },
+      "fields": { "confirmPassword": "确认新密码", "password": "新密码" },
+      "title": "修改密码"
     }
   },
-  "devices": {
-    "devices": "设备"
-  }
+  "placeholder": {
+    "auto": "自动获取",
+    "autoCreate": "没有账号将自动注册",
+    "changeOutputDevice": "已切换输出设备",
+    "enterMsg": "输入消息",
+    "handUp": "举手",
+    "handUpMsg": "发送了举手",
+    "mute": "静音🔇",
+    "nomute": "解除静音📣",
+    "nopwd": "若无密码则留空",
+    "room": "输入会议名称",
+    "roomId": "输入会议号",
+    "sendMsg": "发送",
+    "streamSetting": "高级串流设置",
+    "success": "成功",
+    "successCreate": "成功创建",
+    "username": "请输入用户名"
+  },
+  "project_name": { "ai_cam": "人工智能监控", "rk_d": "瑞芯微面板" },
+  "rooms": {
+    "change_room": "切换房间",
+    "create": "创建会议室",
+    "custom": "加入房间",
+    "date": "预约",
+    "host": "主持人",
+    "id": "会议号",
+    "join": "加入自定义房间",
+    "live": "显示活跃房间",
+    "liveList": "活跃房间列表",
+    "name": "会议名称",
+    "pwd": "房间密码",
+    "roomList": "会议室列表",
+    "rooms": "会议室",
+    "table": { "creation_time": "创建时间", "id": "房间 ID", "name": "房间名", "num_participants": "在线人数" },
+    "title": "会议室列表"
+  },
+  "settings": {
+    "settings": "设置",
+    "cpu_refetch_interval": "CPU 信息更新频率",
+    "disk_refetch_interval": "硬盘信息更新频率"
+  },
+  "sysinfo": {
+    "sysinfo": "系统信息",
+    "boot_time": "启动日期",
+    "distribution_id": "系统",
+    "host_name": "用户名",
+    "kernel_version": "内核版本",
+    "os_version": "系统版本",
+    "time_now": "当前时间",
+    "up_time": "在线时长"
+  },
+  "table": { "actions": "操作" },
+  "tags": { "clone": "复制" },
+  "time": {
+    "day": "天",
+    "hour": "小时",
+    "millisecond": "毫秒",
+    "minute": "分",
+    "second": "秒",
+    "times_sec": "秒每次",
+    "times_milisec": "毫秒每次",
+    "sec_times": "次每秒"
+  },
+  "warnWhenUnsavedChanges": "改动未保存, 确认退出么?"
 }

@@ -13,6 +13,9 @@ import { useTranslation } from "react-i18next";
 import * as colorMode from "./components/color-mode";
 import dataProvider from "@refinedev/simple-rest";
 import routerBindings, * as reactRouterV6 from "@refinedev/react-router-v6";
+import dayjs from "dayjs";
+import { SettingPage } from "pages/settings";
+import { DashboardOutlined, SettingOutlined } from "@ant-design/icons";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -21,6 +24,7 @@ function App() {
     changeLocale: (lang: string) => i18n.changeLanguage(lang),
     getLocale: () => i18n.language,
   };
+  dayjs.locale(i18n.language);
   return (
     <BrowserRouter>
       <RefineKbarProvider>
@@ -34,13 +38,17 @@ function App() {
             i18nProvider={i18nProvider}
             resources={[
               {
-                name: "devices",
-                list: "/devices",
-                create: "/devices/create",
-                edit: "/devices/edit/:id",
-                show: "/devices/show/:id",
+                name: "dashboard",
+                list: "/",
                 meta: {
-                  canDelete: true,
+                  icon: <DashboardOutlined />,
+                },
+              },
+              {
+                name: "settings",
+                list: "/settings",
+                meta: {
+                  icon: <SettingOutlined />,
                 },
               },
             ]}
@@ -77,6 +85,7 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/devices" index element={<DeviceList />} />
+                <Route path="/settings" index element={<SettingPage />} />
               </Route>
             </Routes>
             <RefineKbar />

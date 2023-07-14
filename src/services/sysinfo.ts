@@ -1,18 +1,14 @@
 import { GetAverage } from "utils/math";
-import { useApiUrl, useCustom } from "@refinedev/core";
-import { useEffect, useState } from "react";
+import { BaseRecord, CustomResponse, useApiUrl, useCustom } from "@refinedev/core";
+import { RangeColorPair, milliseconds } from "interfaces/service.type";
 
-type RangeColorPair = [number, string];
-type milliseconds = number;
+/**
+ * `GetSysinfoData` wrap of the `useApiUrl()` function
+ * @param infoName API uri, e.g. "cpus"
+ * @param refetchInterval unit: milliseconds, 0 to disable
+ * @returns data, error, isError, isLoading, isLoadingError, isRefetchError
 
-const usageColorPairs: RangeColorPair[] = [
-  [90, "red"],
-  [75, "volcano"],
-  [50, "orange"],
-  [10, "green"],
-  [0, "blue"],
-];
-
+ */
 export function GetSysinfoData(infoName: string, refetchInterval: milliseconds | false) {
   if (refetchInterval === 0) {
     refetchInterval = false;
@@ -22,7 +18,7 @@ export function GetSysinfoData(infoName: string, refetchInterval: milliseconds |
     url: `${apiUrl}/` + infoName,
     method: "get",
     queryOptions: {
-      refetchInterval: refetchInterval, // unit: milliseconds; 0 to disable
+      refetchInterval: refetchInterval,
     },
   });
   return {
@@ -35,33 +31,42 @@ export function GetSysinfoData(infoName: string, refetchInterval: milliseconds |
   };
 }
 
-// TODO: refactor
-export const GetCpuInfo = (translator: any) => {
-  const { data: cpuData, error, isError, isLoading, isLoadingError, isRefetchError } = GetSysinfoData("cpus", 1000);
-  const [averageUsage, setAverageUsage] = useState<string>("0");
-  const [cpuDetail, setCPUDetail] = useState<any>();
-  const [usageColor, setUsageColor] = useState<string>("green");
-  useEffect(() => {
-    const fetchCpuUsage = async () => {
-      const cpus = cpuData?.data["cpu_info"];
-      const cpuDetails = cpuData?.data["cpu_info"];
-      if (isLoading || error || isError || isLoadingError || isRefetchError) {
-        setUsageColor("green");
-        setAverageUsage(translator("loading"));
-      } else {
-        let cpuUsageSumArr: any[] = [];
-        cpus.forEach((cpu: any) => {
-          let cpu_average_usage = cpu["percent"];
-          cpuUsageSumArr.push(cpu_average_usage);
-        });
-        const average = GetAverage(cpuUsageSumArr);
-        const colorValue = usageColorPairs.find(([range]) => Number(average) >= range)?.[1] ?? "blue";
-        setUsageColor(colorValue);
-        setAverageUsage(average);
-        setCPUDetail(cpuDetails);
-      }
-    };
-    fetchCpuUsage();
-  }, [cpuData, cpuData?.data, isLoading, error, isError, isLoadingError, isRefetchError, translator]);
-  return [averageUsage, usageColor, cpuDetail, isLoading, isError];
+/**
+ * `GetColorByAverage` method to get a color string base load average
+ * @param average load average number
+ * @returns color string of color type in `usageColors`
+ */
+export const GetColorByAverage = (average: number) => {
+  const usageColors: RangeColorPair[] = [
+    [90, "#ff4d4f"],
+    [75, "#ff7a45"],
+    [45, "#ffc53d"],
+    [10, "#52c41a"],
+    [0, "#69b1ff"],
+  ];
+  const color = usageColors.find(([range]) => Number(average) >= range)?.[1] ?? "blue";
+  return color;
+};
+
+/**
+ * `GetLoadAverage` method to calculate average
+ * @param data `data` from `GetSysinfoData()`
+ * @param dataKey data body object key.
+ * @param valueKey `body`'s column that send to calculate
+ * @returns average | 0 if `data` is null
+ */
+export const GetLoadAverage = (data: CustomResponse<BaseRecord> | undefined, dataKey: string, valueKey: string) => {
+  if (data) {
+    let average = "0";
+    const dataBody = data?.data[dataKey];
+    let summeryArr: any[] = [];
+    dataBody.forEach((value: any) => {
+      let averageValue = value[valueKey];
+      summeryArr.push(averageValue);
+    });
+    average = GetAverage(summeryArr, 1);
+    return average;
+  } else {
+    return 0;
+  }
 };
