@@ -7,7 +7,7 @@ export const NetworkCard = () => {
   const translate = useTranslate();
   const networkHeader = (
     <div className="cpu-usage-overview-header">
-      <ApiOutlined /> {translate("network_info.description")}
+      <ApiOutlined /> {translate("network_info.title")}
     </div>
   );
   return (

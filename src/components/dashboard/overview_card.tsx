@@ -1,12 +1,14 @@
 import { useTranslate } from "@refinedev/core";
 import { Card, Descriptions, Tooltip } from "antd";
 import dayjs from "dayjs";
+import { API_URI } from "interfaces/service.enum";
+import { RefetchInterval } from "interfaces/service.enum";
 import { useEffect, useState } from "react";
 import { GetSysinfoData } from "services/sysinfo";
 
 export const OverviewCard = () => {
   const translate = useTranslate();
-  const { data, isLoading } = GetSysinfoData("boot_time", 3600000);
+  const { data, isLoading } = GetSysinfoData(API_URI.BootTime, RefetchInterval.Overview);
   const [fmtTimeNow, setFmtTimeNow] = useState(dayjs().format("YYYY-MM-DD HH:mm:ss"));
   const [fmtUpTime, setFmtUpTime] = useState(translate("calculating"));
   let fmtBootTime = translate("sysinfo.boot_time");

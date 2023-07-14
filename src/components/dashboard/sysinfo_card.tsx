@@ -1,10 +1,12 @@
 import { useTranslate } from "@refinedev/core";
 import { Card, Descriptions } from "antd";
+import { API_URI } from "interfaces/service.enum";
+import { RefetchInterval } from "interfaces/service.enum";
 import { GetSysinfoData } from "services/sysinfo";
 
 export const SystemInfoCard = () => {
   const translate = useTranslate();
-  const { data, isLoading } = GetSysinfoData("sysinfo", 0);
+  const { data, isLoading } = GetSysinfoData(API_URI.Sysinfo, RefetchInterval.Disable);
   let sysinfo = {
     distribution_id: translate("loading"),
     host_name: translate("loading"),
@@ -16,7 +18,7 @@ export const SystemInfoCard = () => {
   }
   return (
     <Card
-      title={translate("sysinfo.sysinfo")}
+      title={translate("sysinfo.title")}
       className={"sysinfo-card"}
       style={{ maxWidth: "30rem", maxHeight: "15rem" }}
       defaultValue={"empty"}

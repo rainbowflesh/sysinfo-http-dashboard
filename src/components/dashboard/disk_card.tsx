@@ -4,10 +4,12 @@ import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GetSysinfoData } from "services/sysinfo";
 import { PrettyBytes } from "utils/math";
 import { DatabaseOutlined } from "@ant-design/icons";
+import { RefetchInterval } from "interfaces/service.enum";
+import { API_URI } from "interfaces/service.enum";
 
 export const DiskCard = () => {
   const translate = useTranslate();
-  const { data, isLoading, isError } = GetSysinfoData("disks", 360000);
+  const { data, isLoading, isError } = GetSysinfoData(API_URI.Disk, RefetchInterval.Disk);
 
   const diskDetailColumn = [
     {
@@ -48,7 +50,7 @@ export const DiskCard = () => {
 
   const diskHeader = (
     <div className="cpu-usage-overview-header">
-      <DatabaseOutlined /> {translate("disk_info.description")}
+      <DatabaseOutlined /> {translate("disk_info.title")}
     </div>
   );
 

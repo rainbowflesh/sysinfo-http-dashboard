@@ -1,20 +1,21 @@
 import { Card, Col, Collapse, Table, Tag } from "antd";
-import { FundOutlined, ThunderboltOutlined } from "@ant-design/icons";
+import { ThunderboltOutlined } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GaugePlot } from "components/charts/gauge_plot";
 import { GetColorByAverage, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
+import { API_URI, DefaultColor, RefetchInterval } from "interfaces/service.enum";
 
 export const CpuCard = () => {
   const translate = useTranslate();
   let refetchInterval = localStorage.getItem("cpu_refetch_interval");
   if (!refetchInterval) {
-    refetchInterval = "3000";
+    refetchInterval = RefetchInterval.Cpu.toString();
   }
-  const { data, isError, isLoading } = GetSysinfoData("cpus", Number(refetchInterval));
+  const { data, isError, isLoading } = GetSysinfoData(API_URI.Cpu, Number(refetchInterval));
   const [average, setAverage] = useState<any>();
-  const [color, setColor] = useState("#52c41a");
+  const [color, setColor] = useState(DefaultColor);
 
   useEffect(() => {
     setAverage(GetLoadAverage(data, "cpu_info", "percent"));
@@ -42,7 +43,7 @@ export const CpuCard = () => {
 
   const cpuOverview = (
     <div className="cpu-usage-overview-header">
-      <ThunderboltOutlined /> {translate("cpu_info.description")}
+      <ThunderboltOutlined /> {translate("cpu_info.title")}
       <div className="cpu-usage-overview-content">{<GaugePlot value={average} color={color} />}</div>
     </div>
   );

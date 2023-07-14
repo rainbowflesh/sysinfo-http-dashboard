@@ -1,22 +1,24 @@
-import { Card, Col, Collapse, Table, Tag } from "antd";
-import { FundOutlined, HddOutlined, UsbOutlined } from "@ant-design/icons";
+import { Card, Col, Collapse, Table } from "antd";
+import { HddOutlined } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import CollapsePanel from "antd/es/collapse/CollapsePanel";
 import { GaugePlot } from "components/charts/gauge_plot";
-import { GetColorByAverage, GetLoadAverage, GetSysinfoData } from "services/sysinfo";
+import { GetColorByAverage, GetSysinfoData } from "services/sysinfo";
 import { useEffect, useState } from "react";
 import { PrettyBytes } from "utils/math";
+import { DefaultColor, RefetchInterval } from "interfaces/service.enum";
+import { API_URI } from "interfaces/service.enum";
 
 export const MemoryCard = () => {
   const translate = useTranslate();
   const [memRatio, setMemRatio] = useState<any>();
-  const [color, setColor] = useState("#52c41a");
+  const [color, setColor] = useState(DefaultColor);
 
   let refetchInterval = localStorage.getItem("memory_refetch_interval");
   if (!refetchInterval) {
-    refetchInterval = "2000";
+    refetchInterval = RefetchInterval.Memory.toString();
   }
-  const { data, isError, isLoading } = GetSysinfoData("memory", Number(refetchInterval));
+  const { data, isError, isLoading } = GetSysinfoData(API_URI.Memory, Number(refetchInterval));
 
   useEffect(() => {
     let numerator = data?.data[0]["used_memory"];
