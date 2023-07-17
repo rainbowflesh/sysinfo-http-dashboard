@@ -67,6 +67,6 @@ export const GetLoadAverage = (data: CustomResponse<BaseRecord> | undefined, dat
     average = GetAverage(summeryArr, 1);
     return average;
   } else {
-    return 0;
+    return NaN;
   }
 };
